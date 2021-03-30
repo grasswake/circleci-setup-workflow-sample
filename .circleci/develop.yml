@@ -7,6 +7,6 @@ version: 2.1
 #       - checkout
 #       - install_yarn_version
 
-
-- checkout
-- install_yarn_version
+steps:
+  - checkout
+  - install_yarn_version
