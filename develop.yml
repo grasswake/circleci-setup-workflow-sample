@@ -1,0 +1,8 @@
+version: 2.1
+
+jobs:
+  prepare:
+    executor: default
+    steps:
+      - checkout
+      - install_yarn_version
