@@ -21,8 +21,15 @@ executors:
           TZ: Asia/Tokyo
         image: circleci/node:14.15.5
 
-workflows:
-  use-my-orb:
-    jobs:
+jobs:
+  setup:
+    executor: default
+    steps:
+      - checkout
       - continuation/continue:
-          configuration_path: ./develop.yml
+          configuration_path: .circleci/develop.yml
+
+workflows:
+  setup:
+    jobs:
+      - setup
