@@ -18,7 +18,7 @@ commands:
 
 jobs:
   setup:
-    # executor: default
+    executor: default
     steps:
       - install_yarn_version
 # workflows:
