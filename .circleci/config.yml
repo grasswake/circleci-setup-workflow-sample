@@ -6,14 +6,6 @@ orbs:
   continuation: circleci/continuation@0.1.2
   path-filtering: circleci/path-filtering@0.0.2
 
-install_yarn_version:
-  description: "Install specific Yarn version"
-  steps:
-    - run:
-        name: Install specific Yarn version
-        command: |
-          echo 'run command'
-
 executors:
   default:
     docker:

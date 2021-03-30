@@ -1,12 +1,13 @@
 version: 2.1
 
-install_yarn_version:
-  description: "Install specific Yarn version"
-  steps:
-    - run:
-        name: Install specific Yarn version
-        command: |
-          echo 'run command'
+commands:
+  install_yarn_version:
+    description: "Install specific Yarn version"
+    steps:
+      - run:
+          name: Install specific Yarn version
+          command: |
+            echo 'run command'
 
 executors:
   default:
