@@ -1,7 +1,27 @@
 version: 2.1
 
+install_yarn_version:
+  description: "Install specific Yarn version"
+  steps:
+    - run:
+        name: Install specific Yarn version
+        command: |
+          echo 'run command'
+
+executors:
+  default:
+    docker:
+      - environment:
+          TZ: Asia/Tokyo
+        image: circleci/node:14.15.5
+
 jobs:
   setup:
     executor: default
     steps:
       - install_yarn_version
+
+workflows:
+  setup:
+    jobs:
+      - setup
