@@ -1,0 +1,23 @@
+executor: default
+steps:
+  - checkout
+  - attach_workspace:
+      at: .
+  - aws-s3/sync:
+      from: ./dist/
+      to: "s3://buecketname"
+      aws-access-key-id: AWS_ACCESS_KEY_ID
+      aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+      aws-region: AWS_DEFAULT_REGION
+      arguments: --delete
+  - aws-cli/setup:
+      profile-name: default
+      aws-access-key-id: AWS_ACCESS_KEY_ID
+      aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+      aws-region: AWS_DEFAULT_REGION
+  - run:
+      name: Restore CloudFront cache
+      command: |
+        aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths '/*'
+  - notify_slack_fail
+  - notify_slack_pass
