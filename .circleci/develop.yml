@@ -9,19 +9,21 @@ commands:
           command: |
             echo 'run command'
 
-# executors:
-#   default:
-#     docker:
-#       - environment:
-#           TZ: Asia/Tokyo
-#         image: circleci/node:14.15.5
+executors:
+  default:
+    docker:
+      - environment:
+          TZ: Asia/Tokyo
+        image: circleci/node:14.15.5
 
 jobs:
   setup:
     executor: default
     steps:
+      - checkout
       - install_yarn_version
-# workflows:
-#   setup:
-#     jobs:
-#       - setup
+
+workflows:
+  setup:
+    jobs:
+      - setup
