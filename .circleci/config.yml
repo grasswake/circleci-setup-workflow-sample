@@ -27,8 +27,7 @@ jobs:
     executor: default
     steps:
       # - checkout
-      - continuation/continue:
-          configuration_path: .circleci/develop.yml
+      - install_yarn_version
 
 workflows:
   generate-config:
@@ -39,4 +38,4 @@ workflows:
           # mapping: |
           #   src/.* build-code true
           #   doc/.* build-docs true
-      - install_yarn_version
+      - setup
