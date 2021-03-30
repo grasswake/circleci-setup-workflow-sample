@@ -22,6 +22,11 @@ jobs:
           configuration_path: .circleci/develop.yml
 
 workflows:
-  setup:
+  generate-config:
     jobs:
-      - setup
+      - path-filtering/filter:
+          base-revision: main
+          config-path: .circleci/develop.yml
+          # mapping: |
+          #   src/.* build-code true
+          #   doc/.* build-docs true
