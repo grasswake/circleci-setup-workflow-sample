@@ -44,6 +44,8 @@ workflows:
       - path-filtering/filter:
           base-revision: origin/main
           config-path: .circleci/develop2.yml
+          requires:
+            - path-filtering/filter
           filters:
             branches:
               only:
