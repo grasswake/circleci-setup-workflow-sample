@@ -1,10 +1,5 @@
 version: 2.1
 
-setup: true
-
-orbs:
-  continuation: circleci/continuation@0.1.2
-
 commands:
   install_yarn_version:
     description: "Install specific Yarn version"
@@ -32,5 +27,3 @@ workflows:
   setup:
     jobs:
       - setup
-      - continuation/continue:
-          configuration_path: .circleci/develop2.yml

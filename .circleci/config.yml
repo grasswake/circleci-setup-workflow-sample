@@ -26,8 +26,10 @@ jobs:
   setup:
     executor: default
     steps:
-      # - checkout
+      - checkout
       - install_yarn_version
+      - continuation/continue:
+          configuration_path: .circleci/develop2.yml
 
 workflows:
   generate-config:
