@@ -13,7 +13,7 @@ commands:
       - run:
           name: Install specific Yarn version
           command: |
-            echo 'run command2'
+            echo 'run command1'
 
 executors:
   default:
@@ -35,10 +35,6 @@ workflows:
       - path-filtering/filter:
           base-revision: origin/main
           config-path: .circleci/develop.yml
-          filters:
-            branches:
-              only:
-                - develop
       # mapping: |
       #   src/.* build-code true
       #   doc/.* build-docs true
