@@ -28,8 +28,8 @@ jobs:
     steps:
       - checkout
       - install_yarn_version
-      - continuation/continue:
-          configuration_path: .circleci/develop2.yml
+      # - continuation/continue:
+      #     configuration_path: .circleci/develop2.yml
 
 workflows:
   generate-config:
@@ -37,6 +37,9 @@ workflows:
       - path-filtering/filter:
           base-revision: origin/main
           config-path: .circleci/develop.yml
+      - path-filtering/filter:
+          base-revision: origin/main
+          config-path: .circleci/develop2.yml
       # mapping: |
       #   src/.* build-code true
       #   doc/.* build-docs true
