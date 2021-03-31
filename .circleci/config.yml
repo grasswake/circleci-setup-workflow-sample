@@ -49,7 +49,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
+                - main
       # mapping: |
       #   src/.* build-code true
       #   doc/.* build-docs true
