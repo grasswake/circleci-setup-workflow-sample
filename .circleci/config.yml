@@ -32,12 +32,12 @@ jobs:
 workflows:
   generate-config:
     jobs:
-      # - path-filtering/filter:
-      #     base-revision: origin/main
-      #     config-path: .circleci/develop.yml
+      - path-filtering/filter:
+          base-revision: origin/main
+          config-path: .circleci/develop.yml
       # mapping: |
       #   src/.* build-code true
       #   doc/.* build-docs true
-      - continuation/continue:
-          configuration_path: .circleci/develop.yml
+      # - continuation/continue:
+      #     configuration_path: .circleci/develop.yml
       - setup
