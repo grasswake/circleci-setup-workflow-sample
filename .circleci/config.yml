@@ -35,6 +35,10 @@ workflows:
       - path-filtering/filter:
           base-revision: origin/main
           config-path: .circleci/develop.yml
+          filters:
+            branches:
+              only:
+                - develop
       # mapping: |
       #   src/.* build-code true
       #   doc/.* build-docs true
