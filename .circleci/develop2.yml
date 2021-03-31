@@ -1,5 +1,5 @@
 version: 2.1
-
+setup: true
 commands:
   install_yarn_version:
     description: "Install specific Yarn version"
