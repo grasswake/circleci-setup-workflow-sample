@@ -19,13 +19,13 @@ executors:
         image: circleci/node:14.15.5
 
 jobs:
-  setup:
+  setupp:
     executor: default
     steps:
       - checkout
       - install_yarn_version
 
 workflows:
-  setup:
+  setupp:
     jobs:
-      - setup
+      - setupp
