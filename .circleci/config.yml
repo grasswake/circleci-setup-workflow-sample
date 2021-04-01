@@ -37,9 +37,9 @@ jobs:
       - continuation/continue:
           configuration_path: .circleci/develop.yml
           parameters: '{"run-setup":false}'
-      - continuation/continue:
-          configuration_path: .circleci/develop2.yml
-          parameters: '{"run-setup":false}'
+      # - continuation/continue:
+      #     configuration_path: .circleci/develop2.yml
+      #     parameters: '{"run-setup":false}'
 
 workflows:
   generate-config:
