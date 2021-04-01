@@ -1,0 +1,3 @@
+when: << pipeline.parameters.build-client >>
+jobs:
+  - build-client

@@ -1,0 +1,3 @@
+when: << pipeline.parameters.build-server >>
+jobs:
+  - build-server

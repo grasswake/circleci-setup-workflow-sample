@@ -1,0 +1,9 @@
+executor: default
+steps:
+  - checkout
+  - run:
+      name: build-server
+      command: |
+        echo 'run build-server'
+  - notify_slack_fail
+  - notify_slack_pass

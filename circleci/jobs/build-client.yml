@@ -1,0 +1,9 @@
+executor: default
+steps:
+  - checkout
+  - run:
+      name: build-client
+      command: |
+        echo 'run build-client'
+  - notify_slack_fail
+  - notify_slack_pass
