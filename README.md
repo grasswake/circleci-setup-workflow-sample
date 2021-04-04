@@ -1,3 +1,3 @@
-# circleci-setup-workflow-not-monorepo-sample
+# circleci-setup-workflow-sample
 
 ## Qiita
