@@ -34,6 +34,13 @@ jobs:
           name: build-server
           command: |
             echo 'run build-server'
+  echo:
+    executor: default
+    steps:
+      - run:
+          name: Echo
+          command: |
+            echo '何もやることないとエラーになるよ'
 
 workflows:
   version: 2
@@ -45,3 +52,7 @@ workflows:
     jobs:
       - build-server
     when: << pipeline.parameters.build-server >>
+  echo
+    jobs:
+      - echo
+  
