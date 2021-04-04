@@ -55,3 +55,7 @@ workflows:
   echo:
     jobs:
       - echo
+    when:
+      and:
+        - not: << pipeline.parameters.build-client >>
+        - not: << pipeline.parameters.build-server >>
