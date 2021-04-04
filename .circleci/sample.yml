@@ -52,6 +52,6 @@ workflows:
     jobs:
       - build-server
     when: << pipeline.parameters.build-server >>
-  echo:
-    jobs:
-      - echo
+  # echo:
+  #   jobs:
+  #     - echo
