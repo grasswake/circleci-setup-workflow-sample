@@ -1,0 +1,47 @@
+version: 2.1
+
+parameters:
+  build-client:
+    default: false
+    type: boolean
+  build-server:
+    default: false
+    type: boolean
+
+executors:
+  default:
+    docker:
+      - environment:
+          TZ: Asia/Tokyo
+        image: circleci/node:14.15.5
+    working_directory: ~/repo
+
+jobs:
+  build-client:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: build-client
+          command: |
+            echo 'run build-client'
+
+  build-server:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: build-server
+          command: |
+            echo 'run build-server'
+
+workflows:
+  version: 2
+  build-client:
+    jobs:
+      - build-client
+    when: << pipeline.parameters.build-client >>
+  build-server:
+    jobs:
+      - build-server
+    when: << pipeline.parameters.build-server >>

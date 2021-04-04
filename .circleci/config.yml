@@ -6,15 +6,6 @@ orbs:
   continuation: circleci/continuation@0.1.2
   path-filtering: circleci/path-filtering@0.0.2
 
-commands:
-  install_yarn_version:
-    description: "Install specific Yarn version"
-    steps:
-      - run:
-          name: Install specific Yarn version
-          command: |
-            echo 'run command1'
-
 executors:
   default:
     docker:
@@ -23,19 +14,21 @@ executors:
         image: circleci/node:14.15.5
 
 jobs:
-  setup:
-    executor: continuation/default
+  echo:
+    executor: default
     steps:
-      - checkout
-      - install_yarn_version
+      - run:
+          name: Echo
+          command: |
+            echo '何もやることないとエラーになるよ'
 
 workflows:
   generate-config:
     jobs:
       - path-filtering/filter:
           base-revision: origin/main
-          config-path: .circleci/monorepo.yml
+          config-path: .circleci/sample.yml
           mapping: |
             src/server/.* build-server true
             src/client/.* build-client true
-      - setup
+      - echo

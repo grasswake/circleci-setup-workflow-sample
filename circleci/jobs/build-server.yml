@@ -1,7 +1,0 @@
-executor: default
-steps:
-  - checkout
-  - run:
-      name: build-server
-      command: |
-        echo 'run build-server'

@@ -1,7 +1,0 @@
-executor: default
-steps:
-  - checkout
-  - run:
-      name: build-client
-      command: |
-        echo 'run build-client'

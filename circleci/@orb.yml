@@ -1,9 +1,0 @@
-version: 2.1
-
-parameters:
-  build-server:
-    type: boolean
-    default: false
-  build-client:
-    type: boolean
-    default: false
